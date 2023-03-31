@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>timezoneconf</title>
+
+
+<style>
+
+body {
+    padding: 1rem;
+}
+
+header {
+    max-width: 1152px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+    header {
+        font-size: 2em;
+    }
+}
+
+canvas {
+    max-width: 100%;
+}
+
+p, footer, section {
+    max-width: 640px;
+}
+
+p {
+    margin: 1rem auto;
+}
+
+footer, section {
+    margin: 2rem auto;
+}
+
+iframe {
+    max-width: 100%;
+    margin: 2rem auto;
+}
+
+img {
+    width: 480px;
+    max-width: 100%;
+    display: block;
+    margin: 2rem auto;
+}
+
+</style>
+
+<header>
+<p>November 5, 2023</p>
+<div id="graphic"></div>
+<p>will last for four hours
+<br/><big>2 a.m. EDT – 2 a.m. PST</big></p>
+</header>
+
+<img src="map.jpg" />
+
+<section>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe5oyr3XOzP1kD0_MjCk6wBS5lzGGxUXXIjyc68aGspKJUaLg/viewform?embedded=true" width="640" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</section>
+
+<footer>
+<p>TIMEZONECONF occurs whenever there is either a collision or a discontinuity in the time, which means four hours in the fall and one instant in the spring. You are ineligible to be a speaker if at the time of the conference you are in Hawaii, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, the United States Virgin Islands, or Arizona, except within Navajo Nation, except within the Hopi Reservation.</p>
+
+<p>To-do:</p>
+<ul>
+    <li>Better map</li>
+</ul>
+</footer>
+
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+import define from "https://api.observablehq.com/@tophtucker/timezoneconf@403.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "graphic") return new Inspector(document.querySelector("#graphic"));
+});
+</script>
