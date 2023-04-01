@@ -11,12 +11,15 @@
 
 body {
     padding: 1rem;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
 header {
     max-width: 1152px;
     margin: 2rem auto;
-    text-align: center;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-style: italic;
 }
 
 @media screen and (min-width: 500px) {
@@ -35,6 +38,7 @@ p, footer, section {
 
 p {
     margin: 1rem auto;
+    text-align: left;
 }
 
 footer, section {
@@ -53,33 +57,37 @@ img {
     margin: 2rem auto;
 }
 
+strong {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-style: italic;
+}
+
+#graphic {
+    margin: 2rem auto;
+}
+
 </style>
 
 <header>
-<p>November 5, 2023</p>
+November 5, 2023
 <div id="graphic"></div>
-<p>will last for four hours
-<br/><big>2 a.m. EDT – 2 a.m. PST</big></p>
+will last for four hours
+<br/><big>2 a.m. EDT – 2 a.m. PST</big>
 </header>
 
 <img src="map.jpg" />
 
 <section>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe5oyr3XOzP1kD0_MjCk6wBS5lzGGxUXXIjyc68aGspKJUaLg/viewform?embedded=true" width="640" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <big><strong><a href="https://docs.google.com/forms/d/e/1FAIpQLSe5oyr3XOzP1kD0_MjCk6wBS5lzGGxUXXIjyc68aGspKJUaLg/viewform?usp=sf_link">Volunteer to speak</a></strong></big>
 </section>
 
 <footer>
-<p>TIMEZONECONF occurs whenever there is either a collision or a discontinuity in the time, which means four hours in the fall and one instant in the spring. You are ineligible to be a speaker if at the time of the conference you are in Hawaii, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, the United States Virgin Islands, or Arizona, except within Navajo Nation, except within the Hopi Reservation.</p>
-
-<p>To-do:</p>
-<ul>
-    <li>Better map</li>
-</ul>
+<p><strong>TIMEZONECONF</strong> occurs whenever there is either a collision or a discontinuity in clock time, which means four hours in the fall and one instant in the spring. You are ineligible to be a speaker if at the time of the conference you are in Hawaii, American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, the United States Virgin Islands, or Arizona, except within Navajo Nation, except within the Hopi Reservation.</p>
 </footer>
 
 <script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-import define from "https://api.observablehq.com/@tophtucker/timezoneconf@403.js?v=3";
+import define from "https://api.observablehq.com/@tophtucker/timezoneconf.js?v=3";
 new Runtime().module(define, name => {
   if (name === "graphic") return new Inspector(document.querySelector("#graphic"));
 });
